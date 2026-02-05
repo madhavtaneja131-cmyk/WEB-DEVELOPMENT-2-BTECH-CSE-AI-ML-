@@ -19,3 +19,8 @@ image.setAttribute("alt","Javascript")
 const gallary=document.getElementById("gallary");
 gallary.appendChild(image);
 
+//children
+// nextElementSibling
+
+
+
