@@ -5,6 +5,7 @@ function handleclick(){
 
 // Q2.
 const addText=()=>{
+    const h2=document.getElementById
     document.createElement("h2")
     textContent="This is a sub heading"
     const image=document.createElement("img");
