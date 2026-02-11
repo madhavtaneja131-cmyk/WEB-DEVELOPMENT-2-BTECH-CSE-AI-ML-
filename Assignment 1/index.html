@@ -3,10 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Smart Event Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="script.js"></script>
-    
+    <script src="style.js"></script>
+    <header>
+        <h1>
+🎯
+ Smart Event Dashboard</h1>
+    </header>
+    <main class="dashboard-container">
+        <!-- Event Creation Form -->
+        <section class="form-section card">
+            <h2>Add New Event</h2>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label for="eventTitle">Event Title:</label>
+                    <input type="text" id="eventTitle" required placeholder="Enter event title">
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Event Date:</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventCategory">Category:</label>
+                    <select id="eventCategory" required>
+                        <option value="Conference">Conference</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Meetup">Meetup</option>
+                        <option value="Social">Social</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="eventDescription">Description:</label>
+                    <textarea id="eventDescription" rows="3" placeholder="Enter event description"></textarea>
+                </div>
+                <button type="submit" id="addEventBtn">Add Event</button>
+            </form>
+        </section>
+        <!-- Event Display Section -->
+        <section class="display-section card">
+            <div class="display-header">
+                <h2>My Events</h2>
+                <div class="action-buttons">
+                    <button id="clearAllBtn" class="btn-danger">Clear All Events</button>
+                    <button id="addSampleBtn" class="btn-secondary">Add Sample Events</button>
+                </div>
+            </div>
+            <div id="eventList" class="event-list">
+                <p class="empty-msg">No events yet. Add your first event!</p>
+            </div>
+        </section>
+    </main>
+    <!-- DOM Manipulation Demo Section -->
+    <section class="demo-section card">
+        <h2>DOM Manipulation Demo</h2>
+        <div class="demo-content">
+            <p><strong>innerText vs innerHTML vs textContent</strong></p>
+            <div id="demoContainer" style="display: none;"><strong>Bold Text</strong>    with spaces</div>
+            <table class="demo-table">
+                <tr>
+                    <td><strong>Original HTML:</strong></td>
+                    <td><code>&lt;strong&gt;Bold Text&lt;/strong&gt;    with spaces</code></td>
+                </tr>
+                <tr>
+                    <td><strong>innerHTML:</strong></td>
+                    <td id="innerHTMLResult"></td>
+                </tr>
+                <tr>
+                    <td><strong>innerText:</strong></td>
+                    <td id="innerTextResult"></td>
+                </tr>
+                <tr>
+                    <td><strong>textContent:</strong></td>
+                    <td id="textContentResult"></td>
+                </tr>
+</table>
+<p class="key-display">You pressed: <span 
+id="keyPressed">None</span></p>
+</div>
+</section>
+<script src="script.js"></script>
 </body>
-</html>
+</html
