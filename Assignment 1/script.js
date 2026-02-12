@@ -1,4 +1,4 @@
-//target the html elements like form , input fields, buttons
+// Target the HTML elements like form, input fields, buttons
 const eventForm = document.getElementById("eventForm");
 const eventTitle = document.getElementById("eventTitle");
 const eventDate = document.getElementById("eventDate");
@@ -7,53 +7,56 @@ const eventDescription = document.getElementById("eventDescription");
 const clearAllBtn = document.getElementById("clearAllBtn");
 const addSampleBtn = document.getElementById("addSampleBtn");
 const eventContainer = document.getElementById("eventContainer");
-//take 2 sample events for Add sample event data
-let sampleEvent = 
-[
+
+// Take 2 sample events
+let sampleEvent = [
     {
         title: "web dev",
-        date: "4-6-2026",
-        category: "workshop",
-        description: "ahgs h adg ihai dgjabds"
+        date: "4-6-2025",
+        category: "Workshop",
+        description: "ahgs nadg jhad jhai djabds"
     },
     {
         title: "web dev2",
-        date: "4-7-2026",
+        date: "4-7-2025",
         category: "conference",
-        description: "ahgs dsfchjh adg ihai dgjabds"
+        description: "ahgs dshjng ahg jhai djabds"
     }
 ];
-//Create event card which contains the user data and we store it inside a 
-div
-function createEventCard(eventData){
-    const card=document.createElement("div");
-    card.innerHTML=`
+
+// Create event card which contains the user data and store it inside a div
+function createEventCard(eventData) {
+    const card = document.createElement("div");
+    card.innerHTML = `
     <button class="delete-btn">X</button>
     <h3>${eventData.title}</h3>
     <div>${eventData.date}</div>
     <span>${eventData.category}</span>
-    <p>${eventData.description}</p>    
-    `;
-//return the card for the addEvent function
+    <p>${eventData.description}</p>
+  `;
     return card;
 }
-//Add the created event and apend inside the event container
-function addEvent(eventData){
-    //if empty-state is present then remove it when new card will be added.
+
+// Add the created event and append inside the event container
+function addEvent(eventData) {
+    // If empty-state is present then remove it when new card will be added.
     const emptyState = document.getElementById("empty-state");
-    if(emptyState) emptyState.remove()
+    if (emptyState) emptyState.remove();
+
     eventContainer.appendChild(createEventCard(eventData));
 }
-//form handling using submit event
+
+// Form handling using submit event
 eventForm.addEventListener("submit", (event) => {
-    event.preventDefault()
-    //eventData stores the user given value
-    const eventData = 
-    {
+    event.preventDefault();
+
+    // eventData stores the user given value
+    const eventData = {
         title: eventTitle.value,
         date: eventDate.value,
         category: eventCategory.value,
         description: eventDescription.value
-    }
-addEvent(eventData);
-})
+    };
+
+    addEvent(eventData);
+});
