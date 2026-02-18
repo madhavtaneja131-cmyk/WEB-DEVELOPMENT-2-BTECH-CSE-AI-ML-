@@ -60,3 +60,17 @@ eventForm.addEventListener("submit", (event) => {
 
     addEvent(eventData);
 });
+eventContainer.addEventListener("Click",(event)=>{
+    console.log("insidr delete");
+    const card =event.target.closest("event-card");
+    console.log(card);
+    if(event.target.classlist.contains("delete-bin")){
+        card.remove();
+
+
+    }
+    if(!eventContainer.querySelector(".event-card")){
+        eventContainer.innerHTML=
+        <div class="empty-state">No events yet.Add your first event!</div>
+    }
+})
